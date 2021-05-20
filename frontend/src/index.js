@@ -6,14 +6,20 @@ import './index.css';
 import App from './App';
 import configureStore from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
+import sessionReducer from './store/session';
 import * as sessionActions from './store/session';
+import { combineReducers} from 'redux'
 
 
 const store = configureStore();
+const rootReducer = combineReducers({
+  session: sessionReducer,
+});
 
 // if (process.env.NODE_ENV !== "production") {
 //   window.store = store;
 // }
+
 
 if (process.env.NODE_ENV !== 'production') {
   restoreCSRF();
@@ -22,6 +28,8 @@ if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.sessionActions = sessionActions;
 }
+
+
 
 function Root() {
   return (
