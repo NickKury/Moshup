@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    color: wheat;
+}
+
+#navbar{
+    background-color: #c06014;
+   padding: 10px;
+   margin-bottom: 10px;
+    /* width:fit-content;
+    margin: 0;
+    padding: 0; */
+    /* display: flex; */
+    /* align-content: center; */
+    /* justify-content: center; */
+    /* flex-wrap: nowrap; */
+
+    border: 5px solid #424642;
+}
+
+#home-button, #signup-button{
+    background-color: wheat;
+    border: 5px solid #424642;
+margin: 5px;
+padding: 5px;
+
+}
+
+.profile-dropdown{
+    margin: 10px
+}

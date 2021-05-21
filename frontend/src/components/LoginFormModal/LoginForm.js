@@ -26,10 +26,11 @@ function LoginForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id='login-form' onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
+      <div>Enter Your Login Information</div>
       <label>
         Username or Email
         <input

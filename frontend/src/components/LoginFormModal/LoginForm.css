@@ -1,0 +1,34 @@
+body{
+    ;
+}
+
+#loginButton{
+    background-color: wheat;
+    border: 5px solid #424642;
+margin: 5px;
+padding: 5px;
+/* width: fit-content; */
+
+/* top: 0; */
+/* right: 10px; */
+/* left: 10px; */
+/* bottom: 0; */
+/* display: flex; */
+/* flex-direction: column; */
+/* justify-content: center; */
+/* align-items: center; */
+}
+
+#login-form{
+    background-color: #536162;
+
+    border: 5px solid #c06014;
+    margin: auto;
+    padding: auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
