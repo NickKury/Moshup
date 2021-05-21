@@ -4,23 +4,17 @@ body {
 }
 
 #signup{
-background-color: #536162;
-/* display: flex;
-flex-direction: column; */
-border: 5px solid #424642;
-margin: auto;
-padding: 10px;
-width: fit-content;
+    background-color: #536162;
 
-/* top: 0;
-right: 0;
-left: 0;
-bottom: 0; */
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-font-size: large;
+    border: 5px solid #c06014;
+    margin: auto;
+    padding: auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
 }
 
 

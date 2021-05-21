@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './LoginForm.css';
 
 function LoginForm() {
@@ -10,10 +10,11 @@ function LoginForm() {
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
+  const history = useHistory()
 
-  if (sessionUser) return (
-    <Redirect to="/" />
-  );
+  if (sessionUser) {
+    history.push('/')
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +33,7 @@ function LoginForm() {
       </ul>
       <div>Enter Your Login Information</div>
       <label>
-        Username or Email
+        Username or Email: 
         <input
           type="text"
           value={credential}
@@ -41,7 +42,7 @@ function LoginForm() {
         />
       </label>
       <label>
-        Password
+        Password: 
         <input
           type="password"
           value={password}
