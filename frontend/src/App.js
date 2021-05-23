@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
+import GenresContainer from './components/GenresContainer/GenresContainer'
+import EventsContainer from './components/EventsContainer/EventsContainer.js'
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -17,11 +19,14 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          {/* <Route path="/signup">
-            <SignupFormPage />
-          </Route> */}
         </Switch>
       )}
+          <div>
+               <GenresContainer />
+          </div>
+          <div>
+              <EventsContainer />
+          </div>
     </>
   );
 }
