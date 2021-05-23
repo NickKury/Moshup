@@ -20,11 +20,16 @@ const GenresContainer = () => {
 
 
     return (
-        <div>
-            <ul >
-              {genres.map(genre => <li id='genre-list'>{genre.name}</li>)}  
+        <div class='search-container'> Select a Genre
+            <ul class='genre-list'>
+              {genres.map(genre => 
+                <form method='post' action='/search/genres' class='genreSearch'>
+                 <button >
+                  {genre.name} 
+                 </button>
+                 </form>
+                )}  
             </ul>
-            
         </div>
 
 
