@@ -1,7 +1,7 @@
 //import hooks
 import { useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
-
+import './GenreContainer.css'
 import {getGenres} from '../../store/genre';
 
 
@@ -20,8 +20,8 @@ const GenresContainer = () => {
 
 
     return (
-        <div class='search-container'> Select a Genre
-            <ul class='genre-list'>
+        <div class='genre-list' > Select a Genre
+            <ul >
               {genres.map(genre => 
                 <form method='post' action='/search/genres' class='genreSearch'>
                  <button >

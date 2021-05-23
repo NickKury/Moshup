@@ -15,7 +15,7 @@ router.get('', asyncHandler(async (req,res) => {
     res.json(genres);
 }))
 
-router.post('/search/genre'),  asyncHandler(async(req,res) =>{
+router.post('/search/genre'),  setTokenCookie, asyncHandler(async(req,res) =>{
     const result = req.body;
     const json = result.json();
     console.log('thisstuff', json)
