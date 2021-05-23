@@ -11,6 +11,7 @@ import { combineReducers} from 'redux'
 import configureStore from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
 import * as sessionActions from './store/session';
+import * as genreActions from './store/genre'
 
 const store = configureStore();
 
@@ -25,6 +26,7 @@ const store = configureStore();
     window.csrfFetch = csrfFetch;
     window.store = store;
     window.sessionActions = sessionActions;
+    window.genreActions = genreActions;
   }
   
   const rootReducer = combineReducers({
