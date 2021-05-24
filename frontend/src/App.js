@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import SignupFormPage from "./components/SignupFormPage";
-import GenresContainer from './components/GenresContainer/GenresContainer'
-import EventsContainer from './components/EventsContainer/EventsContainer.js'
+import Landing from './components/LandingPage'
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+// import { route } from "../../backend/routes/api/events";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,16 +18,13 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path='/'>
+            <Landing/>
+          </Route>
         </Switch>
       )}
-      <div className='containers-div'>
-          <div>
-               <GenresContainer />
-          </div>
-          <div>
-              <EventsContainer />
-          </div>
-      </div>
+
+
     </>
   );
 }
