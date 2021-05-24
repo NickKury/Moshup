@@ -3,9 +3,7 @@
     padding: 0;
   }
 
-/* body {
-    color: wheat;
-} */
+
 
 #navbar{
     background-color: #c06014;
@@ -18,18 +16,40 @@
     /* align-content: center; */
     /* justify-content: center; */
     /* flex-wrap: nowrap; */
-
     border: 5px solid #424642;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: 
+    " . . . . . profile login signup";
+}
+#signup-button{
+    grid-area: signup;  
+}
+#login-button {
+    grid-area: login;
+}
+.profile-button{
+    grid-area: signup;
 }
 
-#home-button, #signup-button{
+#home-button, #signup-button, #login-button{
     background-color: wheat;
     border: 5px solid #424642;
-margin: 5px;
-padding: 5px;
+    margin: 5px;
+    padding: 5px;
 
 }
+
+
 
 .profile-dropdown{
     margin: 10px
 }
+
+/* .profile-buttons{
+    display: grid;
+    grid-column-end: 3;
+
+   
+    
+} */

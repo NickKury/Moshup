@@ -21,12 +21,12 @@ const EventsContainer = () => {
 
     return (
         <div class='event-list'> Upcoming Events
-            <ul class='event-list'>
+            <ul >
               {events.map(event => 
                
-                 <li >
+                 <div >
                   {event.description} 
-                 </li>
+                 </div>
                  
                 )}  
             </ul>
