@@ -1,1 +1,15 @@
 /* TODO Add site wide styles */
+
+.containers-div {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-areas: 
+    " genre event . ";
+}
+.genre-list{
+    grid-area: genre;
+}
+
+.event-list{
+    grid-area: event;
+}

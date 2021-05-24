@@ -21,12 +21,14 @@ function App() {
         <Switch>
         </Switch>
       )}
+      <div className='containers-div'>
           <div>
                <GenresContainer />
           </div>
           <div>
               <EventsContainer />
           </div>
+      </div>
     </>
   );
 }
