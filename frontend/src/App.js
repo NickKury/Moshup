@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Landing from './components/LandingPage'
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import CreateEventPage from "./components/CreateEventForm";
 // import { route } from "../../backend/routes/api/events";
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <Landing/>
+          </Route>
+          <Route path='/new-event'>
+            <CreateEventPage/>
           </Route>
         </Switch>
       )}

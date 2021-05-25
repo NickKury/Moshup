@@ -30,7 +30,7 @@ const validateEvent = [
 
 router.post( '/new-event', validateEvent, asyncHandler(async (req, res) => {
       const { description, userId, genreId, date } = req.body;
-      const event = await User.create({ description, userId, genreId, date});
+      const event = await Event.create({ description, userId, genreId, date});
   
       await setTokenCookie(res, event);
   
