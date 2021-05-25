@@ -20,10 +20,6 @@ function Navigation({ isLoaded }){
       <> 
         <LoginFormModal className='login-button'/>
         <SignupFormModal className='signup-button'/>
-        {/* <CreateEvent className='new-event'/> */}
-        {/* <button id='signup-button'>
-        <NavLink to="/signup">Sign Up</NavLink>
-        </button> */}
       </>
     );
   }
@@ -34,9 +30,6 @@ function Navigation({ isLoaded }){
         <button id='home-button'>
         <NavLink exact to="/">Home</NavLink>
         </button>
-        {/* <button id='create-event-button'>
-        <Link exact to="/new-event">Create an Event</Link>
-        </button> */}
         {isLoaded && sessionLinks}
         </div>
     </ul>

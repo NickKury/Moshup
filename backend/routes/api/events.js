@@ -1,7 +1,6 @@
 const express = require('express')
 const asyncHandler = require('express-async-handler');
 const { Event } = require('../../db/models');
-const { setTokenCookie, requireAuth } = require('../../utils/auth');
 const { handleValidationErrors } = require('../../utils/validation');
 const { check } = require('express-validator');
 const router = express.Router();
@@ -13,7 +12,7 @@ router.get('', asyncHandler(async (req,res) => {
 
 router.get(`/:id`, asyncHandler(async(req, res)=>{
   const eventId = parseInt(req.params.id, 10)  
-  const event = await Event.findByPk(eventId, {include: description, date, genreId});
+  const event = await Event.findByPk(eventId);
   res.json(event);
 }))
 

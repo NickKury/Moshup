@@ -28,8 +28,8 @@ export const getEvents = () => async (dispatch) => {
     dispatch(setEvents(events))
 }
 
-export const getOneEvent = () => async (dispatch) => {
-    const res = await csrfFetch(`/api/events`);
+export const getOneEvent = (eventId) => async (dispatch) => {
+    const res = await csrfFetch(`/api/events/${eventId}`);
     //error handle if res.ok
     const event = await res.json();
     console.log('just one event', event);
@@ -72,7 +72,7 @@ const eventReducer = (state = initialState, action) => {
             return newState;
         case ONE_EVENT:
             const singleState = {...state};
-            singleState[action.events.id] = action.event;
+            singleState[action.events.id] = action.events;
             return singleState;
             
         case ADD_ONE: {

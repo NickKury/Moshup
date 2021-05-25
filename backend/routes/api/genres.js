@@ -18,7 +18,7 @@ router.get('', asyncHandler(async (req,res) => {
 router.post('/search/genre'),  setTokenCookie, asyncHandler(async(req,res) =>{
     const result = req.body;
     const json = result.json();
-    console.log('thisstuff', json)
+    // console.log('thisstuff', json)
 })
 
 // router.post('/search/genre', csrfProtection, asyncHandler(async (req, res) => {

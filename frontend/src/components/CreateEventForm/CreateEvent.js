@@ -8,10 +8,7 @@ const CreateEvent = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const genres = useSelector(state => Object.values(state.genres)); //obj.values changes from an array to an obj
-   const userId = useSelector(state => state.session.user?.id) // ? for if user id
-
-    // const genres = useSelector(state => (state.genres));
-    // console.log(genres, 'stuff')
+    const userId = useSelector(state => state.session.user?.id) // ? for if user id
     const [description, setDescription] = useState('');
     const [genre, setGenre] = useState(genres[0]);
     const [date, setDate] = useState('');

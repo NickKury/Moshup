@@ -27,7 +27,7 @@ function App() {
           <Route path='/new-event'>
             <CreateEventPage/>
           </Route>
-          <Route path='/event/:id'>
+          <Route path='/events/:id'>
             <EventPage/>
           </Route>
           <Route path='/genre/:id'>
