@@ -21,13 +21,11 @@ const EventsContainer = () => {
 
     return (
         <div class='event-list'> Upcoming Events
-            <ul >
+            <ul key='event'>
               {events.map(event => 
-               
                  <div >
                   {event.description} 
-                 </div>
-                 
+                 </div> 
                 )}  
             </ul>
         </div>
