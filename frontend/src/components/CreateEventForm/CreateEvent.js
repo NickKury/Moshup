@@ -40,6 +40,9 @@ const CreateEvent = () => {
             <button type='submit'>
                 Create your event
             </button>
+            <div>
+                attending list
+            </div>
         </div>
     )
 }

@@ -5,6 +5,8 @@ import Landing from './components/LandingPage'
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import CreateEventPage from "./components/CreateEventForm";
+import GenreSearch from './components/GenreSearch';
+import EventPage from "./components/EventPage";
 // import { route } from "../../backend/routes/api/events";
 
 function App() {
@@ -24,6 +26,12 @@ function App() {
           </Route>
           <Route path='/new-event'>
             <CreateEventPage/>
+          </Route>
+          <Route path='/event/:id'>
+            <EventPage/>
+          </Route>
+          <Route path='/genre/:id'>
+            <GenreSearch/>
           </Route>
         </Switch>
       )}
