@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
   // add reducer functions here
   session: sessionReducer,
   genres: genreReducer,
-  event:eventReducer,
+  event: eventReducer,
 });
 
 let enhancer;
