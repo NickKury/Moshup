@@ -3,6 +3,8 @@ import {csrfFetch} from './csrf'
 const SET_EVENTS = 'events/SET_EVENTS'
 const ONE_EVENT = 'events/ONE_EVENT'
 const ADD_ONE = 'event/ADD_ONE'
+const EDIT_EVENT = 'event/EDIT_EVENT'
+const DELETE_ONE = 'event/DELETE_ONE'
 
 //define action creators
 const setEvents = events => ({
@@ -17,7 +19,17 @@ const oneEvent = events => ({
 const addOneEvent = event => ({
     type: ADD_ONE,
     event
-})
+});
+const deleteOneEvent = eventId =>({
+    type: DELETE_ONE,
+    eventId
+
+});
+
+// const edit = updatedEvents => ({
+//     type: EDIT_EVENT,
+//     updatedEvents,
+// });
 
 //define thunks
 export const getEvents = () => async (dispatch) => {
@@ -32,7 +44,7 @@ export const getOneEvent = (eventId) => async (dispatch) => {
     const res = await csrfFetch(`/api/events/${eventId}`);
     //error handle if res.ok
     const event = await res.json();
-    console.log('just one event', event);
+    // console.log('just one event', event);
     dispatch(oneEvent(event))
 }
 
@@ -52,8 +64,27 @@ export const createEvent = data => async dispatch =>{
     }
 }
 
+export const editEvent = eventId => async dispatch =>{
+    const response = await csrfFetch(`/api/events/${eventId}`,{
+        method:"PUT",
+        body: JSON.stringify({eventId}),
+    })
+    if(response.ok){
+        const event = await response.json();
+        dispatch(addOneEvent(event));
+    // dispatch(editEvent(response))
+    return event;
+    }
+}
 
-
+export const deleteEvent = (eventId) => async dispatch =>{
+    const response = await csrfFetch(`/api/events/${eventId}`,{
+        method:"DELETE",
+        body: JSON.stringify({eventId}),
+    })
+    dispatch(deleteOneEvent(eventId))
+    return response;
+};
 //define an initial state
 const initialState = {};
 
@@ -94,6 +125,26 @@ const eventReducer = (state = initialState, action) => {
                 }
             }
         }
+        case EDIT_EVENT: 
+        // const editEvent = {
+        //     ...state,
+        //     content: { ...state.content, Event:
+        //     [...action.updatedEvents]},
+        // }
+        // return editEvent;
+        const editState = {...state};
+        action.events.forEach(event => {
+            editState[event.id] = event;
+        })
+        return editState;
+
+        case DELETE_ONE: 
+        const oldState = {
+            ...state
+        }
+        delete oldState[action.eventId]
+        return oldState;
+        
         default:
             return state;
     }

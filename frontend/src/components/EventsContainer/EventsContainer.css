@@ -1,11 +1,11 @@
 .event-list{
     color:black;
     border: 2px solid black;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     width:fit-content;
-    /* background-color: #3d84b8; */
+    background-color: wheat;
     margin: 5px;
-    
-    /* justify-content: center; */
+    font-size:x-large;
+    justify-content: center;
 }

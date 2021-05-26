@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import CreateEventPage from "./components/CreateEventForm";
 import GenreSearch from './components/GenreSearch';
 import EventPage from "./components/EventPage";
+import EditEvent from "./components/EventPage/EditEvent"
 // import { route } from "../../backend/routes/api/events";
 
 function App() {
@@ -30,9 +31,12 @@ function App() {
           <Route path='/events/:id'>
             <EventPage/>
           </Route>
-          <Route path='/genre/:id'>
+          <Route path='/genres/:id'>
             <GenreSearch/>
           </Route>
+          <Route path='/edit-event'>
+                <EditEvent/>
+            </Route>
         </Switch>
       )}
 

@@ -1,6 +1,6 @@
 /* TODO Add site wide styles */
 
-.containers-div {
+/* .containers-div {
     display: grid;
     grid-template-columns: 25% 50% 25%;
     grid-template-areas: 
@@ -12,4 +12,11 @@
 
 .event-list{
     grid-area: event;
+} */
+body{
+    background: url(https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80);
+    /* background: url(https://images.unsplash.com/photo-1574805950011-8cdf615261b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1649&q=80); */
+    /* background: url(https://images.unsplash.com/photo-1568734021492-e13c8c1cd879?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80); */
+    /* background: url(); */
+    background-size:  95%;
 }

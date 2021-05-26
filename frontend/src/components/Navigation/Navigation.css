@@ -24,6 +24,9 @@
 .profile-button{
     grid-area: signup;
 }
+.profile-dropdown{
+    grid-area:login
+}
 
 #home-button, #signup-button, #login-button{
     background-color: wheat;
@@ -32,7 +35,9 @@
     padding: 5px;
 
 }
-
+#home-button{
+    font-size: larger;
+}
 
 
 .profile-dropdown{
