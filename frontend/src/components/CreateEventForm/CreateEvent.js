@@ -1,10 +1,11 @@
 import {getGenres} from '../../store/genre';
 import { useEffect, useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import{useHistory} from 'react-router-dom'
+import{useHistory, useParams} from 'react-router-dom'
 import {createEvent} from '../../store/event'
 
 const CreateEvent = () => {
+    const { id } = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
     const genres = useSelector(state => Object.values(state.genres)); //obj.values changes from an array to an obj
@@ -34,9 +35,9 @@ const CreateEvent = () => {
 
         const event = await dispatch(createEvent(payload))
         console.log('created event', event)
-        if(event) {
-            history.push(`/event/${event.id}`);
-        }
+        
+         history.push(`/events/${id}`);
+        
     }
 
     return(

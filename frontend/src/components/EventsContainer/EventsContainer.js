@@ -3,7 +3,7 @@ import { useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import './EventsContainer.css'
 import {getEvents} from '../../store/event';
-
+import {Link} from 'react-router-dom'
 
 
 const EventsContainer = () => {
@@ -23,9 +23,12 @@ const EventsContainer = () => {
         <div class='event-list'> Upcoming Events
             <ul key='event'>
               {events.map(event => 
-                 <div >
-                  {event.description} 
-                 </div> 
+                //  <div>
+                //  <Link to={`/events/${event.id}`}>
+                //   {event.description} 
+                //  </Link> 
+                //  </div>
+                <a href={`/events/${event.id}`}> {event.description}</a>
                 )}  
             </ul>
         </div>

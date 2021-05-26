@@ -43,6 +43,29 @@ router.post( '/', validateEvent, asyncHandler(async (req, res) => {
     }),
   );
 
+  router.put('/:id', validateEvent, asyncHandler(async(req,res) => {
+    const id = await Event.update(req.body);
+    const event = await Event.one(id);
+    return res.json(event);
+  })
+);
+  // router.put('/id', validateEvent, asyncHandler(async(req,res)=>{
+  //   const { description, userId, genreId, date } = req.body;
+  //   const event = await Event.update({ description, userId, genreId, date});
+  //   return res.json({
+  //     event,
+  //   });
+  // }));
+
+  router.delete('/:id', asyncHandler(async(req,res)=>{
+    const eventId = parseInt(req.params.id, 10)  
+    const event = await Event.findByPk(eventId);
+     await event.destroy()
+
+    //  const events = await Event.findAll();
+    res.json('successfully deleted')
+  }))
+
 //export
 module.exports = router;
 

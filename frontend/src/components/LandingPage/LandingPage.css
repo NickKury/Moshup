@@ -1,0 +1,21 @@
+.containers-div{
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-areas: 
+    " genre  event   create";
+}
+
+.genre-container{
+    grid-area: genre
+}
+
+.events-container{
+    grid-area: event;
+    display: flex;
+    flex-direction: column;
+    /* justify-self: flex-end; */
+}
+
+.create-event{
+    grid-area: create
+}

@@ -5,7 +5,6 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 import SignupFormModal from '../SignupFormPage';
-import CreateEvent from '../CreateEventForm/CreateEventForm';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -13,7 +12,7 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <ProfileButton className='profile-button' user={sessionUser} />
     );
   } else {
     sessionLinks = (
@@ -28,7 +27,7 @@ function Navigation({ isLoaded }){
     <ul >
       <div id='navbar'>
         <button id='home-button'>
-        <NavLink exact to="/">Home</NavLink>
+        <NavLink exact to="/">MoshUp</NavLink>
         </button>
         {isLoaded && sessionLinks}
         </div>

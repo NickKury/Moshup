@@ -2,6 +2,21 @@ import { useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import {getOneEvent} from '../../store/event';
 import{useParams} from 'react-router-dom'
+import{useHistory} from 'react-router-dom'
+import DeleteEvent from './DeleteEvent'
+import {Link} from 'react-router-dom'
+import EditEvent from './EditEvent'
+
+
+// const DeleteEvent = () =>{
+//     const dispatch = useDispatch();
+//     const history = useHistory();
+//     const event = useSelector((state) => Object.values(state.event));
+
+//     useEffect(() => {
+//         dispatch(deleteEvent(event));
+//     }, [dispatch]);
+// }
 
 const EventPage = () => {
     const {id} = useParams();
@@ -24,8 +39,13 @@ const EventPage = () => {
                  </div>    
                 )}  
         </ul>
-        <button>Edit</button>
-        <button>Delete</button>
+        <button>
+            <Link to='/edit-event'>
+                Edit
+            </Link>
+            
+        </button>
+        <DeleteEvent/>
         <ul>Who's Going
             <li>person</li>
         </ul>
