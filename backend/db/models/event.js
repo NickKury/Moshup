@@ -13,6 +13,9 @@ module.exports = (sequelize, DataTypes) => {
 
     Event.belongsTo(models.Genre,
       {foreignKey:'genreId'})
+
+    Event.hasMany(models.Attending,
+      {foreignKey:'eventId'})
   };
   return Event;
 };
