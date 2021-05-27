@@ -43,19 +43,18 @@ router.post( '/', validateEvent, asyncHandler(async (req, res) => {
     }),
   );
 
-  router.put('/:id', validateEvent, asyncHandler(async(req,res) => {
-    const id = await Event.update(req.body);
-    const event = await Event.one(id);
+  router.put('/:id', asyncHandler(async(req,res) => {
+    // console.log('=========', req.body)
+    const {id} = req.params;
+    const {description, date, userId, genreId} = req.body
+    const event = await Event.update({description, date, userId, genreId},
+      {where: {id}});
+    // const event = await Event.one(id);
+    console.log('updated event', event)
     return res.json(event);
   })
 );
-  // router.put('/id', validateEvent, asyncHandler(async(req,res)=>{
-  //   const { description, userId, genreId, date } = req.body;
-  //   const event = await Event.update({ description, userId, genreId, date});
-  //   return res.json({
-  //     event,
-  //   });
-  // }));
+
 
   router.delete('/:id', asyncHandler(async(req,res)=>{
     const eventId = parseInt(req.params.id, 10)  

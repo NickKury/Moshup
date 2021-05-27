@@ -34,7 +34,7 @@ function App() {
           <Route path='/genres/:id'>
             <GenreSearch/>
           </Route>
-          <Route path='/edit-event'>
+          <Route path='/edit-event/:id'>
                 <EditEvent/>
             </Route>
         </Switch>

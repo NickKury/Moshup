@@ -14,8 +14,9 @@ const EventPage = () => {
     const {id} = useParams();
     // console.log(id)
     const dispatch = useDispatch();
-    const event = useSelector((state) => (state.event)); //obj.values changes from an array to an obj
-    console.log('here be event', event, event.id)
+    const event = useSelector((state) => Object.values(state.event)); //obj.values changes from an array to an obj
+   const singleEvent = event.find(one => one.id === +id)
+    console.log('here be event', singleEvent)
 
     //use react hook and cause a side effect
     useEffect(async () => {
@@ -24,15 +25,15 @@ const EventPage = () => {
 
     return(
     <div>
-        <ul key='eventInfo'>
+        {/* <ul key='eventInfo'> */}
         {/* {event.map(info =>  */}
                  <div > 
-                  {/* Who: {event.description}   When: {event.date}   */}
+                  Who: {singleEvent?.description}   When: {singleEvent?.date}  
                  </div>    
                 {/* )}   */}
-        </ul>
+        {/* </ul> */}
         <button>
-            <Link to='/edit-event'>
+            <Link to={`/edit-event/${singleEvent?.id}`}>
                 Edit
             </Link>
             
