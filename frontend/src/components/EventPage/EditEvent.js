@@ -30,6 +30,7 @@ const EditEvent = (events) =>{
         e.preventDefault();
 
         const payload = {
+            id,
             description,
             date,
             genreId: genre,
