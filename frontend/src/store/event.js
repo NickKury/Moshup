@@ -101,6 +101,7 @@ const eventReducer = (state = initialState, action) => {
                 newState[event.id] = event;
             })
             return newState;
+            
         case ONE_EVENT:
             const singleState = {...state};
             singleState[action.events.id] = action.events;

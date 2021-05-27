@@ -8,22 +8,14 @@ import {Link} from 'react-router-dom'
 import EditEvent from './EditEvent'
 
 
-// const DeleteEvent = () =>{
-//     const dispatch = useDispatch();
-//     const history = useHistory();
-//     const event = useSelector((state) => Object.values(state.event));
 
-//     useEffect(() => {
-//         dispatch(deleteEvent(event));
-//     }, [dispatch]);
-// }
 
 const EventPage = () => {
     const {id} = useParams();
     // console.log(id)
     const dispatch = useDispatch();
     const event = useSelector((state) => Object.values(state.event)); //obj.values changes from an array to an obj
-    console.log('here be event', event)
+    console.log('here be event', event, id)
 
     //use react hook and cause a side effect
     useEffect(() => {

@@ -7,7 +7,8 @@ import{useParams} from 'react-router-dom'
 const GenreSearch = () =>{
     const {id} = useParams();
     const dispatch = useDispatch();
-    const genre = useSelector((state) => Object.values(state.genre));
+    const genres = useSelector((state) => Object.values(state.genres));
+    console.log('here be genres', genres)
 
     useEffect(() => {
         dispatch(getOneGenre(id));
@@ -17,7 +18,7 @@ const GenreSearch = () =>{
         <div>the genre page
             <div>
                 <ul key='genreInfo'>
-                {genre.map(info => 
+                {genres.map(info => 
                         <div > 
                         {info.name}  
                         </div>    
