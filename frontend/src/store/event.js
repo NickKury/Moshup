@@ -49,7 +49,7 @@ export const getOneEvent = (eventId) => async (dispatch) => {
 }
 
 export const createEvent = data => async dispatch =>{
-    console.log('create event data', data)
+    // console.log('create event data', data)
     const response = await csrfFetch('/api/events', {
         method:'post',
         headers:{
@@ -60,6 +60,7 @@ export const createEvent = data => async dispatch =>{
     if(response.ok){
         const event = await response.json();
         dispatch(addOneEvent(event));
+        console.log('==========',event)
         return event;
     }
 }

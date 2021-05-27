@@ -34,9 +34,11 @@ const CreateEvent = () => {
         };
 
         const event = await dispatch(createEvent(payload))
-        console.log('created event', event, id)
+        console.log('created event', event, event.event.id)
+        if(event){
+            history.push(`/events/${event.event.id}`);
+        }
         
-         history.push(`/events/${id}`);
         
     }
 
@@ -70,9 +72,6 @@ const CreateEvent = () => {
                     <button type='submit'>
                         Create your event
                     </button>
-                    <div>
-                        attending list
-                    </div>
             </form>
         </div>
     )
