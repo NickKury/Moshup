@@ -34,7 +34,7 @@ const CreateEvent = () => {
         };
 
         const event = await dispatch(createEvent(payload))
-        console.log('created event', event)
+        console.log('created event', event, id)
         
          history.push(`/events/${id}`);
         

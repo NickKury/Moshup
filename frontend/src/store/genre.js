@@ -9,7 +9,7 @@ const setGenres = genres => ({
     genres
 });
 
-const oneGenre = genres=> ({
+const oneGenre = genres => ({
     type: GET_GENRE,
     genres
 })
@@ -47,6 +47,7 @@ const genreReducer = (state = initialState, action) => {
             const singleState = {...state};
             singleState[action.genres.id] = action.genres;
             return singleState;
+            
         default:
             return state;
     }
