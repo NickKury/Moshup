@@ -2,6 +2,7 @@ const express = require('express')
 const asyncHandler = require('express-async-handler');
 const { Event } = require('../../db/models');
 const { handleValidationErrors } = require('../../utils/validation');
+const{requireAuth} = require('../../utils/auth')
 const { check } = require('express-validator');
 const router = express.Router();
 
@@ -33,7 +34,7 @@ const validateEvent = [
   ];
 
 
-router.post( '/', validateEvent, asyncHandler(async (req, res) => {
+router.post( '/', requireAuth, validateEvent, asyncHandler(async (req, res) => {
       const { description, userId, genreId, date } = req.body;
       const event = await Event.create({ description, userId, genreId, date});
   
@@ -43,7 +44,7 @@ router.post( '/', validateEvent, asyncHandler(async (req, res) => {
     }),
   );
 
-  router.put('/:id', asyncHandler(async(req,res) => {
+  router.put('/:id', requireAuth, validateEvent, asyncHandler(async(req,res) => {
     // console.log('=========', req.body)
     const {id} = req.params;
     const {description, date, userId, genreId} = req.body
@@ -56,7 +57,7 @@ router.post( '/', validateEvent, asyncHandler(async (req, res) => {
 );
 
 
-  router.delete('/:id', asyncHandler(async(req,res)=>{
+  router.delete('/:id', requireAuth, asyncHandler(async(req,res)=>{
     const eventId = parseInt(req.params.id, 10)  
     const event = await Event.findByPk(eventId);
      await event.destroy()

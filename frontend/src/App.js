@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import Landing from './components/LandingPage'
 import * as sessionActions from "./store/session";
@@ -11,6 +11,7 @@ import EditEvent from "./components/EventPage/EditEvent"
 // import { route } from "../../backend/routes/api/events";
 
 function App() {
+  const event = useSelector((state) => Object.values(state.event))
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -35,7 +36,7 @@ function App() {
             <GenreSearch/>
           </Route>
           <Route path='/edit-event/:id'>
-                <EditEvent/>
+                <EditEvent  events={event}/>
             </Route>
         </Switch>
       )}

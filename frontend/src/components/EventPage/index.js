@@ -13,6 +13,7 @@ import EditEvent from './EditEvent'
 const EventPage = () => {
     const {id} = useParams();
     // console.log(id)
+    const sessionUser = useSelector((state) => state.session.user);
     const dispatch = useDispatch();
     const event = useSelector((state) => Object.values(state.event)); //obj.values changes from an array to an obj
    const singleEvent = event.find(one => one.id === +id)
@@ -23,27 +24,49 @@ const EventPage = () => {
         await dispatch(getOneEvent(id));
     }, [dispatch]);
 
-    return(
-    <div>
-        {/* <ul key='eventInfo'> */}
-        {/* {event.map(info =>  */}
-                 <div > 
-                  Who: {singleEvent?.description}   When: {singleEvent?.date}  
-                 </div>    
-                {/* )}   */}
-        {/* </ul> */}
-        <button>
-            <Link to={`/edit-event/${singleEvent?.id}`}>
-                Edit
-            </Link>
+    if(sessionUser){
+        return(
+            <div>
+                         <div > 
+                          Who/Where: {singleEvent?.description}    
+                         </div>    
+                         <div > 
+                            When: {singleEvent?.date}  
+                         </div> 
+                <button>
+                    <Link to={`/edit-event/${singleEvent?.id}`}>
+                        Edit
+                    </Link>
+                    
+                </button>
+                <DeleteEvent/>
+                <div>
+                <button>Join Event</button>
+                <ul>Who's Going
+                    <li>person</li>
+                </ul>
+                </div>
+            </div>
+            )
+
+    } else{
+        return(
+        <div>
+                     <div > 
+                      Who/Where: {singleEvent?.description}    
+                     </div>    
+                     <div > 
+                        When: {singleEvent?.date}  
+                     </div> 
+            <ul>Who's Going
+                <li>person</li>
+            </ul>
             
-        </button>
-        <DeleteEvent/>
-        <ul>Who's Going
-            <li>person</li>
-        </ul>
-    </div>
-    )
+        </div>
+        )
+
+
+    }
 }
 
 export default EventPage;

@@ -17,9 +17,9 @@ const GenreSearch = () =>{
     return(
         <div>the genre page
             <div>
-                <ul key='genreInfo'>
+                <ul >
                 {genres.map(info => 
-                        <div > 
+                        <div key='genreInfo'> 
                         {info.name}  
                         </div>    
                         )}  

@@ -11,9 +11,9 @@ const setEvents = events => ({
     type: SET_EVENTS,
     events
 });
-const oneEvent = events => ({
+const oneEvent = event => ({
     type: ONE_EVENT,
-    events
+    event
 });
 
 const addOneEvent = event => ({
@@ -36,7 +36,7 @@ export const getEvents = () => async (dispatch) => {
     const res = await csrfFetch('/api/events');
     //error handle if res.ok
     const events = await res.json();
-    // console.log(events);
+    // console.log('look at this', events);
     dispatch(setEvents(events))
 }
 
@@ -44,7 +44,7 @@ export const getOneEvent = (eventId) => async (dispatch) => {
     const res = await csrfFetch(`/api/events/${eventId}`);
     //error handle if res.ok
     const event = await res.json();
-    // console.log('just one event', event);
+    console.log('just one event', event);
     dispatch(oneEvent(event))
 }
 
@@ -60,7 +60,7 @@ export const createEvent = data => async dispatch =>{
     if(response.ok){
         const event = await response.json();
         dispatch(addOneEvent(event));
-        console.log('==========',event)
+        // console.log('==========',event)
         return event;
     }
 }
@@ -105,7 +105,7 @@ const eventReducer = (state = initialState, action) => {
             
         case ONE_EVENT:
             const singleState = {...state};
-            singleState[action.events.id] = action.events;
+            singleState[action.event.id] = action.event;
             return singleState;
             
         case ADD_ONE: {
