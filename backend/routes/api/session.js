@@ -68,4 +68,13 @@ router.get(
     }
   );
 
+    router.post('/demo', asyncHandler(async(req, res) =>{
+      const userId = 1;
+      const user = await User.findByPk(userId);
+      await setTokenCookie(res, user);
+      return res.json({
+        user,
+      });
+    }))
+
 module.exports = router;

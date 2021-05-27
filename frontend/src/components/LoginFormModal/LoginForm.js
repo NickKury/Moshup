@@ -15,6 +15,13 @@ function LoginForm() {
   if (sessionUser) {
     history.push('/')
   };
+  const demoSubmit = async(e) =>{
+    const demo = await dispatch(sessionActions.demoUser())
+    if (sessionUser) {
+      history.push('/')
+    };
+    return demo;
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,6 +34,7 @@ function LoginForm() {
   }
 
   return (
+    <div>
     <form id='login-form' onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
@@ -51,7 +59,11 @@ function LoginForm() {
         />
       </label>
       <button type="submit">Log In</button>
+      <button type='button' onClick={demoSubmit}>
+      Demo User
+      </button>
     </form>
+    </div>
   );
 }
 
