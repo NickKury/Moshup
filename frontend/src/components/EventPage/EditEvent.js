@@ -4,7 +4,7 @@ import {getGenres} from '../../store/genre';
 import{useParams} from 'react-router-dom'
 import {editEvent} from '../../store/event'
 import{useHistory} from 'react-router-dom'
-
+import './EventPage.css'
 
 const EditEvent = ({events}) =>{
     const dispatch = useDispatch();
@@ -37,7 +37,7 @@ const EditEvent = ({events}) =>{
             userId
         };
 
-        const event = await dispatch(editEvent(payload))
+        await dispatch(editEvent(payload))
         // console.log('edited event', event )
         
         history.push(`/events/${id}`);
@@ -45,9 +45,9 @@ const EditEvent = ({events}) =>{
     }
 
     return(
-        <div className='containers-div'>
-        im a div
-        <form onSubmit={handleSubmit}>
+        <div className='edit-containers-div'>
+       
+        <form className='edit-containers-form' onSubmit={handleSubmit}>
              <input
              type='textarea'
              placeholder='Who is Playing'
@@ -75,9 +75,6 @@ const EditEvent = ({events}) =>{
                  <button type='submit'>
                      Update your event
                  </button>
-                 <div>
-                     attending list
-                 </div>
          </form>
      </div>
     )

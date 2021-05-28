@@ -18,9 +18,9 @@ const EventPage = () => {
     // console.log('here be event date', singleEvent)
 
     //use react hook and cause a side effect
-    useEffect(async () => {
-        await dispatch(getOneEvent(id));
-    }, [dispatch]);
+    useEffect( () => {
+     dispatch(getOneEvent(id));
+    }, [dispatch, id]);
 
     if(sessionUser){
         return(

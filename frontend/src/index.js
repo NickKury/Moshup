@@ -5,14 +5,14 @@ import { Provider  } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import { ModalProvider } from "./components/context/Modal";
-import sessionReducer from './store/session';
-import { combineReducers} from 'redux'
+// import sessionReducer from './store/session';
+// import { combineReducers} from 'redux'
 
 import configureStore from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
 import * as sessionActions from './store/session';
-import genreReducer, * as genreActions from './store/genre'
-import eventReducer, * as eventActions from './store/event'
+import  * as genreActions from './store/genre'
+import  * as eventActions from './store/event'
 
 const store = configureStore();
 
@@ -31,11 +31,11 @@ const store = configureStore();
     window.eventActions = eventActions;
   }
   
-  const rootReducer = combineReducers({
-    session: sessionReducer,
-    genre: genreReducer,
-    event: eventReducer,
-  });
+  // const rootReducer = combineReducers({
+  //   session: sessionReducer,
+  //   genre: genreReducer,
+  //   event: eventReducer,
+  // });
 
 
   function Root() {

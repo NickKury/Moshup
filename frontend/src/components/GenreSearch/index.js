@@ -12,7 +12,7 @@ const GenreSearch = () =>{
 
     useEffect(() => {
         dispatch(getOneGenre(id));
-    }, [dispatch]);
+    }, [dispatch, id]);
 
     return(
             <div>

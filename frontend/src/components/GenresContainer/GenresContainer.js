@@ -3,7 +3,7 @@ import { useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import './GenreContainer.css'
 import {getGenres} from '../../store/genre';
-import {Link} from 'react-router-dom'
+
 
 
 const GenresContainer = () => {
@@ -24,8 +24,8 @@ const GenresContainer = () => {
         <div className='genre-list' > Select a Genre
             <ul >
               {genres.map(genre => 
-              <div>
-                  <a className='genre-link' key={genre.id} href={`/genres/${genre.id}`}> {genre.name}</a>
+              <div key={genre.id}>
+                  <a className='genre-link'  href={`/genres/${genre.id}`}> {genre.name}</a>
               </div>
                
                 )}  

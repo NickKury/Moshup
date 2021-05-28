@@ -3,8 +3,7 @@ import { useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import './EventsContainer.css'
 import {getEvents} from '../../store/event';
-import {Link} from 'react-router-dom'
-import { format, compareAsc } from 'date-fns'
+import { format} from 'date-fns'
 
 
 const EventsContainer = () => {

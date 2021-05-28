@@ -1,6 +1,4 @@
-import { useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux'
-import {getOneEvent} from '../../store/event';
+import {useDispatch} from 'react-redux'
 import{useParams} from 'react-router-dom'
 import {deleteEvent} from '../../store/event'
 import{useHistory} from 'react-router-dom'
