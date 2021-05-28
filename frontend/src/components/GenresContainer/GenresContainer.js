@@ -10,7 +10,7 @@ const GenresContainer = () => {
     //decalre variable from hooks
     const dispatch = useDispatch();
     const genres = useSelector(state => Object.values(state.genres)); //obj.values changes from an array to an obj
-    console.log(genres)
+    // console.log(genres)
 
     //use react hook and cause a side effect
     useEffect(() => {

@@ -15,7 +15,7 @@ const EventPage = () => {
     const event = useSelector((state) => Object.values(state.event)); //obj.values changes from an array to an obj
    const singleEvent = event.find(one => one.id === +id)
 //    const date = format(new Date(singleEvent.date), 'MM/dd/yyyy')
-    console.log('here be event date', singleEvent)
+    // console.log('here be event date', singleEvent)
 
     //use react hook and cause a side effect
     useEffect(async () => {

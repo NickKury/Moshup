@@ -44,7 +44,7 @@ export const getOneEvent = (eventId) => async (dispatch) => {
     const res = await csrfFetch(`/api/events/${eventId}`);
     //error handle if res.ok
     const event = await res.json();
-    console.log('just one event', event);
+    // console.log('just one event', event);
     dispatch(oneEvent(event))
 }
 

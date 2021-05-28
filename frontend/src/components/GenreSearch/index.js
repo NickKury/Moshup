@@ -8,7 +8,7 @@ const GenreSearch = () =>{
     const {id} = useParams();
     const dispatch = useDispatch();
     const genres = useSelector((state) => Object.values(state.genres));
-    console.log('here be genres', genres)
+    // console.log('here be genres', genres)
 
     useEffect(() => {
         dispatch(getOneGenre(id));

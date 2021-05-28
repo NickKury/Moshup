@@ -17,7 +17,7 @@ const DeleteEvent = () =>{
 
 
         await dispatch(deleteEvent(id))
-        console.log('deleted event')
+        // console.log('deleted event')
         
             history.push(`/`);
        

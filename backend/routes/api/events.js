@@ -51,7 +51,7 @@ router.post( '/', requireAuth, validateEvent, asyncHandler(async (req, res) => {
     const event = await Event.update({description, date, userId, genreId},
       {where: {id}});
     // const event = await Event.one(id);
-    console.log('updated event', event)
+    // console.log('updated event', event)
     return res.json(event);
   })
 );

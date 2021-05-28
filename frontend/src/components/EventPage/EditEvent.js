@@ -20,7 +20,7 @@ const EditEvent = ({events}) =>{
     const updateDescription = e => setDescription(e.target.value)
     const updateGenre = e => setGenre(e.target.value)
     const updateDate = e => setDate(e.target.value)
-    console.log(description, genre, date, events)
+    // console.log(description, genre, date, events)
 
     useEffect(() => {
         dispatch(getGenres());
