@@ -1,16 +1,34 @@
 .genre-list{
     color:black;
-    border: 2px solid black;
+    border: 5px solid #424642;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:flex-end;
     /* border-radius: 25px; */
-    /* position: static; */
+    position: sticky;
     margin-left: 10px;
     margin-right: 80%;
     /* margin-top: 14%; */
-    width: fit-content;
+    width:fit-content;
     height: auto;
     background-color: wheat;
-    font-size: larger;
+    font-size: x-large;
+    font-weight: bold;
+    color: black;
+    opacity: 0.9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    row-gap: 10px;
+}
+
+.genre-link{
+    color:black;
+    text-decoration: none;
+    font-weight: normal;
+    row-gap: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.position{
+    position: sticky;
 }

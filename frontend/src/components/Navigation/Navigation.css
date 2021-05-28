@@ -11,21 +11,39 @@
    margin-bottom: 10px;
     border: 5px solid #424642;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     grid-template-areas: 
-    " . . . . . profile login signup";
+    "  . . . moshup  profile login signup";
 }
 #signup-button{
     grid-area: signup;  
+    width: fit-content;
+    justify-self: left;
 }
 #login-button {
     grid-area: login;
+    width: fit-content;
+    justify-self: right;
 }
 .profile-button{
     grid-area: signup;
+    width: 70px;
+    justify-self: right;
+    border-radius: 25px;
+    justify-self: right;
 }
 .profile-dropdown{
-    grid-area:login
+    grid-area:login;
+    justify-self: right;
+}
+.moshup{
+    grid-area: moshup;
+    justify-self: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    font-style: italic;
+    margin: 5px;
+    /* padding: 5px; */
 }
 
 #home-button, #signup-button, #login-button{
@@ -33,10 +51,15 @@
     border: 5px solid #424642;
     margin: 5px;
     padding: 5px;
-
+    text-decoration: none;
 }
+
 #home-button{
     font-size: larger;
+    text-decoration: none;
+    color: black;
+    width: fit-content;
+
 }
 
 
@@ -44,10 +67,3 @@
     margin: 10px
 }
 
-/* .profile-buttons{
-    display: grid;
-    grid-column-end: 3;
-
-   
-    
-} */

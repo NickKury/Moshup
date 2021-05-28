@@ -27,6 +27,31 @@ module.exports = {
           name: 'EDM',
           createdAt: new Date(),
           updatedAt: new Date(),
+        },
+        {
+          name: 'Pop',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Rock',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Reggae',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Alternative',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Pop Punk',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         }
     ], {});
   },

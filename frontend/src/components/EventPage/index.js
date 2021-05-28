@@ -1,13 +1,10 @@
 import { useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import {getOneEvent} from '../../store/event';
-import{useParams} from 'react-router-dom'
-import{useHistory} from 'react-router-dom'
+import { useParams } from "react-router-dom";
 import DeleteEvent from './DeleteEvent'
 import {Link} from 'react-router-dom'
-import EditEvent from './EditEvent'
-import { format, compareAsc } from 'date-fns'
-
+import './EventPage.css'
 
 
 const EventPage = () => {
@@ -27,46 +24,53 @@ const EventPage = () => {
 
     if(sessionUser){
         return(
-            <div>
-                         <div > 
-                          Who/Where: {singleEvent?.description}    
-                         </div>    
-                         <div > 
-                            When: {singleEvent?.date}
-                         </div> 
+            <div className='event-format' >
+                <div className='event-page-info'>
+                <div > 
+                    Who/Where: {singleEvent?.description}    
+                </div>    
+                <div > 
+                     When: {singleEvent?.date}
+                </div> 
                 <button>
                     <Link to={`/edit-event/${singleEvent?.id}`}>
                         Edit
-                    </Link>
-                    
+                    </Link> 
                 </button>
                 <DeleteEvent/>
-                <div>
-                <button>Join Event</button>
-                <ul>Who's Going
-                    <li>person</li>
-                </ul>
+                </div>
+
+                <div className='event-page-attending'>
+                    <ul>Who's Going
+                        <div>
+                    <button>Join Event</button>
+                        </div>
+                        <div>person</div>
+                     </ul>
                 </div>
             </div>
             )
 
     } else{
         return(
-        <div>
-                     <div > 
-                      Who/Where: {singleEvent?.description}    
-                     </div>    
-                     <div > 
-                        When: {singleEvent?.date}  
-                     </div> 
-            <ul>Who's Going
-                <li>person</li>
-            </ul>
-            
+        <div className='event-format'>
+            <div className='event-page-info'>
+                <div > 
+                    Who/Where: {singleEvent?.description}    
+                </div>  
+                <div > 
+                    When: {singleEvent?.date}  
+                </div> 
+            </div> 
+            <div>
+                <div className='event-page-attending'>         
+                    <ul>Who's Going
+                         <div>person</div>
+                     </ul>
+                 </div>
+            </div>
         </div>
         )
-
-
     }
 }
 

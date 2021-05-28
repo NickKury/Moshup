@@ -24,9 +24,10 @@ const EventsContainer = () => {
         <div className='event-list'> Upcoming Events
             <ul >
               {events.map(event =>   
-               <li key={event.id}>
-                <a href={`/events/${event.id}`}> {event.description}  {format(new Date(event.date), 'MM/dd/yyyy')}</a>
-                </li>
+               <div key={event.id}>
+                <a className='event-link' href={`/events/${event.id}`}> {event.description} - {format(new Date(event.date), 'MM/dd/yyyy')}</a>
+                <div className='event-attendees'>Attendees:  </div>
+                </div>
                 )}  
             </ul>
         </div>

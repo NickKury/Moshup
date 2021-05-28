@@ -26,9 +26,9 @@ function Navigation({ isLoaded }){
   return (
     <ul >
       <div id='navbar'>
-        <button id='home-button'>
-        <NavLink exact to="/">MoshUp</NavLink>
-        </button>
+       
+        <NavLink id='home-button' exact to="/">Home</NavLink>
+        <div className='moshup'>MoshUp</div>
         {isLoaded && sessionLinks}
         </div>
     </ul>

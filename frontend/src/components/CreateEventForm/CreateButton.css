@@ -1,0 +1,45 @@
+#create-event-button, #create-event-login{
+    background-color:wheat;
+    font-size: larger;
+    margin:10px;
+    padding: 5px;
+    /* align-self: center; */
+    text-decoration: none;
+    border: 5px solid #424642;
+    justify-items: center;
+}
+
+.container-div{
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    margin: 20px;
+    padding: 20px;
+    grid-template-areas: 
+    " .   event   .";
+    /* align-self: center; */
+    /* width:max-content; */
+    /* justify-content: center; */
+    /* display: flex; */
+    /* align-content: center; */
+    /* flex-direction: column; */
+}
+.containers-form{
+    margin: 10px;
+    padding: 10px;
+    border: 5px solid #424642;
+    background-color:wheat;
+    align-content: center;
+    grid-area: event;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.create-link{
+    color:black;
+    align-self: center;
+    text-decoration: none;
+}
+.create-div{
+    position: sticky;
+}
