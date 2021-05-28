@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/NickKury/Moshup/issues"
   },
-  "homepage": "https://github.com/NickKury/Moshup#readme"
+  "homepage": "https://github.com/NickKury/Moshup#readme",
+  "dependencies": {
+    "date-fns": "^2.21.3"
+  }
 }

@@ -6,7 +6,7 @@ import{useHistory} from 'react-router-dom'
 import DeleteEvent from './DeleteEvent'
 import {Link} from 'react-router-dom'
 import EditEvent from './EditEvent'
-
+import { format, compareAsc } from 'date-fns'
 
 
 
@@ -17,7 +17,8 @@ const EventPage = () => {
     const dispatch = useDispatch();
     const event = useSelector((state) => Object.values(state.event)); //obj.values changes from an array to an obj
    const singleEvent = event.find(one => one.id === +id)
-    console.log('here be event', singleEvent)
+//    const date = format(new Date(singleEvent.date), 'MM/dd/yyyy')
+    console.log('here be event date', singleEvent)
 
     //use react hook and cause a side effect
     useEffect(async () => {
@@ -31,7 +32,7 @@ const EventPage = () => {
                           Who/Where: {singleEvent?.description}    
                          </div>    
                          <div > 
-                            When: {singleEvent?.date}  
+                            When: {singleEvent?.date}
                          </div> 
                 <button>
                     <Link to={`/edit-event/${singleEvent?.id}`}>
