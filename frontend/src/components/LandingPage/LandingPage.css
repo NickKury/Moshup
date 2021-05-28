@@ -6,7 +6,9 @@
 }
 
 .genre-container{
-    grid-area: genre
+    grid-area: genre;
+    justify-items: center;
+    justify-self: center;
 }
 
 .events-container{
@@ -17,5 +19,9 @@
 }
 
 .create-event{
-    grid-area: create
+    grid-area: create;
+    align-self:stretch;
+    top:0;
+    position: sticky;
+
 }

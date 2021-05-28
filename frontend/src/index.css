@@ -19,4 +19,7 @@ body{
     /* background: url(https://images.unsplash.com/photo-1568734021492-e13c8c1cd879?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80); */
     /* background: url(); */
     background-size:  95%;
+    position:relative;
+    background-attachment: fixed;
+    font-family: monospace;
 }

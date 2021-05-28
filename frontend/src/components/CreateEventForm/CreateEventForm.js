@@ -5,6 +5,7 @@ import { NavLink, Link } from 'react-router-dom';
 import * as sessionActions from "../../store/session";
 import { Modal } from '../context/Modal';
 import LoginForm from '../LoginFormModal/LoginForm';
+import './CreateButton.css'
 
 export function CreateEventButton() {
     const dispatch = useDispatch();
@@ -14,17 +15,17 @@ export function CreateEventButton() {
 
     if(sessionUser){
         return(
-            <div>
+            <div className='create-div'>
              <button id='create-event-button'>
-                <Link to="/new-event">Create Your Event</Link>
+                <Link className='create-link' to="/new-event">Create Your Event</Link>
             </button>
             </div>
         )
     }else{
         return(
             <div>
-             <button id='create-event-button' onClick={() => setShowModal(true)}>
-                Log In to Create an Event
+             <button id='create-event-login' onClick={() => setShowModal(true)}>
+                Log In Here to Create an Event
             </button>
                 {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

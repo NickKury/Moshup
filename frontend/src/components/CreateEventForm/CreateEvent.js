@@ -3,6 +3,7 @@ import { useEffect, useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import{useHistory, useParams} from 'react-router-dom'
 import {createEvent} from '../../store/event'
+import './CreateButton.css'
 
 const CreateEvent = () => {
     const { id } = useParams();
@@ -44,10 +45,9 @@ const CreateEvent = () => {
     }
 
     return(
-        <div className='containers-div'>
-           im a div
-           <form onSubmit={handleSubmit}>
-                <input
+        <div className='container-div' >
+           <form className='containers-form' onSubmit={handleSubmit}>
+                <input 
                 type='textarea'
                 placeholder='Who is Playing/Where '
                 required
@@ -63,7 +63,7 @@ const CreateEvent = () => {
                 />
               
                 <select onChange={updateGenre} value={genre}> What Genre is your Event?
-                <option key={genre.id} value={genre.id}> Select  </option>
+                <option key={genre.id} value={genre.id}> Select a Genre </option>
                     {genres.map(genre => 
                         <option key={genre.id} value={genre.id}>
                             {genre.name} 

@@ -20,15 +20,18 @@ const GenresContainer = () => {
 
 
     return (
+        <div className='position'>
         <div className='genre-list' > Select a Genre
             <ul >
               {genres.map(genre => 
-                <a key={genre.id} href={`/genres/${genre.id}`}> {genre.name}</a>
+              <div>
+                  <a className='genre-link' key={genre.id} href={`/genres/${genre.id}`}> {genre.name}</a>
+              </div>
                
                 )}  
             </ul>
         </div>
-
+    </div>
 
     )
 
