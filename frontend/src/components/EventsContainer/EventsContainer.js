@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import './EventsContainer.css'
 import {getEvents} from '../../store/event';
 import {Link} from 'react-router-dom'
+import { format, compareAsc } from 'date-fns'
 
 
 const EventsContainer = () => {
@@ -20,15 +21,12 @@ const EventsContainer = () => {
 
 
     return (
-        <div class='event-list'> Upcoming Events
-            <ul key='event'>
-              {events.map(event => 
-                //  <div>
-                //  <Link to={`/events/${event.id}`}>
-                //   {event.description} 
-                //  </Link> 
-                //  </div>
-                <a href={`/events/${event.id}`}> {event.description}</a>
+        <div className='event-list'> Upcoming Events
+            <ul >
+              {events.map(event =>   
+               <li key={event.id}>
+                <a href={`/events/${event.id}`}> {event.description}  {format(new Date(event.date), 'MM/dd/yyyy')}</a>
+                </li>
                 )}  
             </ul>
         </div>

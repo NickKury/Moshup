@@ -15,17 +15,15 @@ const GenreSearch = () =>{
     }, [dispatch]);
 
     return(
-        <div>the genre page
             <div>
-                <ul key='genreInfo'>
+                <ul >
                 {genres.map(info => 
-                        <div > 
-                        {info.name}  
+                        <div key='genreInfo'> 
+                        {info.name}'s Events 
                         </div>    
                         )}  
                 </ul>
             </div>
-        </div>
     )
 }
 export default GenreSearch;

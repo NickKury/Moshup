@@ -11,7 +11,7 @@ const CreateEvent = () => {
     const genres = useSelector(state => Object.values(state.genres)); //obj.values changes from an array to an obj
     const userId = useSelector(state => state.session.user?.id) // ? for if user id
     const [description, setDescription] = useState('');
-    const [genre, setGenre] = useState(genres[0]);
+    const [genre, setGenre] = useState('');
     const [date, setDate] = useState('');
     
     const updateDescription = e => setDescription(e.target.value)
@@ -27,6 +27,7 @@ const CreateEvent = () => {
         e.preventDefault();
 
         const payload = {
+            id,
             description,
             date,
             genreId: genre,
@@ -34,7 +35,7 @@ const CreateEvent = () => {
         };
 
         const event = await dispatch(createEvent(payload))
-        console.log('created event', event, event.event.id)
+        // console.log('created event', event, event.event.id)
         if(event){
             history.push(`/events/${event.event.id}`);
         }
@@ -48,7 +49,7 @@ const CreateEvent = () => {
            <form onSubmit={handleSubmit}>
                 <input
                 type='textarea'
-                placeholder='Who is Playing'
+                placeholder='Who is Playing/Where '
                 required
                 value={description}
                 onChange={updateDescription}
@@ -62,6 +63,7 @@ const CreateEvent = () => {
                 />
               
                 <select onChange={updateGenre} value={genre}> What Genre is your Event?
+                <option key={genre.id} value={genre.id}> Select  </option>
                     {genres.map(genre => 
                         <option key={genre.id} value={genre.id}>
                             {genre.name} 

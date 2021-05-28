@@ -6,21 +6,21 @@ import {editEvent} from '../../store/event'
 import{useHistory} from 'react-router-dom'
 
 
-const EditEvent = (events) =>{
+const EditEvent = ({events}) =>{
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
 
     const genres = useSelector(state => Object.values(state.genres)); //obj.values changes from an array to an obj
     const userId = useSelector(state => state.session.user?.id) 
-    const [description, setDescription] = useState(events.description);
-    const [genre, setGenre] = useState(events.genre);
-    const [date, setDate] = useState(events.date);
+    const [description, setDescription] = useState('');
+    const [genre, setGenre] = useState('');
+    const [date, setDate] = useState('');
    
     const updateDescription = e => setDescription(e.target.value)
     const updateGenre = e => setGenre(e.target.value)
     const updateDate = e => setDate(e.target.value)
-
+    console.log(description, genre, date, events)
 
     useEffect(() => {
         dispatch(getGenres());
@@ -38,7 +38,7 @@ const EditEvent = (events) =>{
         };
 
         const event = await dispatch(editEvent(payload))
-        console.log('edited event', event )
+        // console.log('edited event', event )
         
         history.push(`/events/${id}`);
        
@@ -64,6 +64,7 @@ const EditEvent = (events) =>{
              />
            
              <select onChange={updateGenre} value={genre}> What Genre is your Event?
+             {/* <option key={genre.id} value={genre.id}> Select  </option> */}
                  {genres.map(genre => 
                      <option key={genre.id} value={genre.id}>
                          {genre.name} 
