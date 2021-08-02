@@ -12,11 +12,8 @@ const DeleteEvent = () =>{
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-
-
         await dispatch(deleteEvent(id))
         // console.log('deleted event')
-        
             history.push(`/`);
        
     }

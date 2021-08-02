@@ -1,6 +1,6 @@
 import {csrfFetch} from './csrf'
 // define action types as Constants
-const SET_EVENTS = 'events/SET_EVENTS'
+const SET_EVENTS = 'events/SET_EVENTS' //!this
 const ONE_EVENT = 'events/ONE_EVENT'
 const ADD_ONE = 'event/ADD_ONE'
 const EDIT_EVENT = 'event/EDIT_EVENT'
@@ -50,7 +50,7 @@ export const getOneEvent = (eventId) => async (dispatch) => {
 
 export const createEvent = data => async dispatch =>{
     // console.log('create event data', data)
-    const response = await csrfFetch('/api/events', {
+    const response = await csrfFetch('/api/events', { //!this
         method:'post',
         headers:{
             'Content-Type': 'application/json',
@@ -81,11 +81,11 @@ export const editEvent = eventId => async dispatch =>{
 export const deleteEvent = (eventId) => async dispatch =>{
     const response = await csrfFetch(`/api/events/${eventId}`, {
         method:"DELETE",
-        body: JSON.stringify({
+        body: JSON.stringify({ 
             eventId
         }),
     })
-    dispatch(deleteOneEvent(eventId))
+    dispatch(deleteOneEvent(eventId)) //!
     return response;
 };
 //define an initial state
