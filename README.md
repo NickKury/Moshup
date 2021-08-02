@@ -21,7 +21,7 @@ Moshup is a fullstack application.  The backend was built with Express and seque
 ## Conclusion and Looking Forward
 Building Moshup was a key experience for me.  It is the first fullstack project that I attempted on my own.  I learned what I am capable of and also where I need to continue improving.  I look forward to improving this application and to continue to create new projects.  
 
-Looking Forward I plan to conitue to flesh out further functionality like searching based on genere, more user interactions with one another,  and implementing a userpage to keep track of attending events and friends.  
+Looking Forward I plan to continue to flesh out further functionality like searching based on genere, more user interactions with one another,  and implementing a userpage to keep track of attending events and friends.  
 
 Thank you for reading 
 
