@@ -13,6 +13,9 @@ const EditEvent = ({events}) =>{
 
     const genres = useSelector(state => Object.values(state.genres)); //obj.values changes from an array to an obj
     const userId = useSelector(state => state.session.user?.id) 
+    const event = useSelector((state) => Object.values(state.event));
+    const singleEvent = event.find(one => one.id === +id)
+
     const [description, setDescription] = useState('');
     const [genre, setGenre] = useState('');
     const [date, setDate] = useState('');
@@ -20,7 +23,7 @@ const EditEvent = ({events}) =>{
     const updateDescription = e => setDescription(e.target.value)
     const updateGenre = e => setGenre(e.target.value)
     const updateDate = e => setDate(e.target.value)
-    // console.log(description, genre, date, events)
+    console.log(singleEvent)
 
     useEffect(() => {
         dispatch(getGenres());
@@ -50,20 +53,20 @@ const EditEvent = ({events}) =>{
         <form className='edit-containers-form' onSubmit={handleSubmit}>
              <input
              type='textarea'
-             placeholder='Who is Playing'
+             placeholder={singleEvent.description}
              required
-             value={description}
+             value={singleEvent.description}
              onChange={updateDescription}
              />
              <input
              type='date'
-             // placeholder='when is your event'
+            //  placeholder={singleEvent.date}
              required
-             value={date}
+             value={singleEvent.date}
              onChange={updateDate}
              />
            
-             <select onChange={updateGenre} value={genre}> What Genre is your Event?
+             <select onChange={updateGenre} value={singleEvent.genreId}> What Genre is your Event?
              {/* <option key={genre.id} value={genre.id}> Select  </option> */}
                  {genres.map(genre => 
                      <option key={genre.id} value={genre.id}>

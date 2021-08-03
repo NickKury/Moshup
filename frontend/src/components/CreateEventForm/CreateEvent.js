@@ -26,20 +26,26 @@ const CreateEvent = () => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
+        if(genre === ''){
+            alert('Please select a Genre')
+        } else {
+            const payload = { //!this
+                id,
+                description,
+                date,
+                genreId: genre,
+                userId
+            };
 
-        const payload = { //!this
-            id,
-            description,
-            date,
-            genreId: genre,
-            userId
-        };
+            const event = await dispatch(createEvent(payload))
+            // console.log('created event', event, event.event.id)
+            if(event){
+                history.push(`/events/${event.event.id}`);
+            }
 
-        const event = await dispatch(createEvent(payload))
-        // console.log('created event', event, event.event.id)
-        if(event){
-            history.push(`/events/${event.event.id}`);
         }
+
+
         
         
     }
