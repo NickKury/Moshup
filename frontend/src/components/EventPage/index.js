@@ -4,6 +4,7 @@ import {getOneEvent} from '../../store/event';
 import { useParams } from "react-router-dom";
 import DeleteEvent from './DeleteEvent'
 import {Link} from 'react-router-dom'
+import { format} from 'date-fns'
 import './EventPage.css'
 
 
@@ -15,7 +16,7 @@ const EventPage = () => {
     const event = useSelector((state) => Object.values(state.event)); //obj.values changes from an array to an obj
    const singleEvent = event.find(one => one.id === +id)
 //    const date = format(new Date(singleEvent.date), 'MM/dd/yyyy')
-    console.log('here be event date', singleEvent?.userId, sessionUser.id)
+    // console.log('here be event date', singleEvent?.userId, sessionUser.id)
 
     //use react hook and cause a side effect
     useEffect( () => {
@@ -30,7 +31,8 @@ const EventPage = () => {
                     Who/Where: {singleEvent?.description}    
                 </div>    
                 <div > 
-                     When: {singleEvent?.date}
+                     When: {format(new Date(singleEvent?.date), 'MM/dd/yyyy')}
+                     {/* {singleEvent?.date} */}
                 </div> 
                 <button>
                     <Link to={`/edit-event/${singleEvent?.id}`}>

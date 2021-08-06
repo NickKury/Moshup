@@ -7,7 +7,9 @@ const { check } = require('express-validator');
 const router = express.Router();
 
 router.get('', asyncHandler(async (req,res) => {
-    const events = await Event.findAll();
+    const allEvents = await Event.findAll();
+    const events = allEvents.slice().sort((a, b) => b.date - a.date)
+    // console.log('sorted events from events.js', sortedEvents)
     res.json(events);
 }))
 
