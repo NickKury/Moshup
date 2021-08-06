@@ -10,7 +10,9 @@ const EventsContainer = () => {
     //decalre variable from hooks
     const dispatch = useDispatch();
     const events = useSelector((state) => Object.values(state.event)); //obj.values changes from an array to an obj
-    // console.log(events)
+    // console.log(events[0]?.date)
+    const sortedEvents = events.slice().sort((a, b) => b.date - a.date)
+    // console.log('this should be ordered', sortedEvents)
 
     //use react hook and cause a side effect
     useEffect(() => {
@@ -22,9 +24,10 @@ const EventsContainer = () => {
     return (
         <div className='event-list'> Upcoming Events
             <ul >
-              {events.map(event =>   
+              {sortedEvents.map(event =>   
                <div key={event.id}>
-                <a className='event-link' href={`/events/${event.id}`}> {event.description} - {format(new Date(event.date), 'MM/dd/yyyy')}</a>
+                <a className='event-link' href={`/events/${event.id}`}> {event.description} - {format(new Date(event?.date), 'MM/dd/yyyy')}
+                </a>
                 <div className='event-attendees'>Attendees:  </div>
                 </div>
                 )}  

@@ -8,6 +8,7 @@ import CreateEventPage from "./components/CreateEventForm";
 import GenreSearch from './components/GenreSearch';
 import EventPage from "./components/EventPage";
 import EditEvent from "./components/EventPage/EditEvent"
+import Footer from "./components/Footer";
 // import { route } from "../../backend/routes/api/events";
 
 function App() {
@@ -37,9 +38,10 @@ function App() {
           </Route>
           <Route path='/edit-event/:id'>
                 <EditEvent  events={event}/>
-            </Route>
+          </Route>
         </Switch>
       )}
+      <Footer/>
 
 
     </>
