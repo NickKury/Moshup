@@ -42,14 +42,14 @@ const EventPage = () => {
                 <DeleteEvent/>
                 </div>
 
-                <div className='event-page-attending'>
+                {/* <div className='event-page-attending'>
                     <ul>Who's Going
                         <div>
                     <button>Join Event</button>
                         </div>
                         <div>person</div>
                      </ul>
-                </div>
+                </div> */}
             </div>
             )
 

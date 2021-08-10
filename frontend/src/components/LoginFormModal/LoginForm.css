@@ -1,15 +1,22 @@
 
 
-#login-form{
+#login{
     background-color: #536162;
 
     border: 5px solid #c06014;
     margin: auto;
     padding: auto;
     width: fit-content;
+  
+}
+
+#login-form{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items:flex-end;
     font-size: large;
+}
+
+#login-buttons{
+    padding-left: 35%;
 }

@@ -22,4 +22,10 @@ body{
     position:relative;
     background-attachment: fixed;
     font-family: monospace;
+   
+}
+
+button{
+     text-decoration: none;
+    cursor: pointer;
 }

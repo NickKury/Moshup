@@ -26,3 +26,25 @@ color:blue
 #new-div {
     color: wheat;
 }
+
+#signup{
+    background-color: #536162;
+
+    border: 5px solid #c06014;
+    margin: auto;
+    padding: auto;
+    width: fit-content;
+  
+}
+
+#signup-form{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    font-size: large;
+}
+
+/* #signup-buttons{
+    padding-left: 35%;
+    /* width: fit-content; */
+/* } */ 

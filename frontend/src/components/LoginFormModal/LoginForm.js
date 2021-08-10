@@ -34,13 +34,13 @@ function LoginForm() {
   }
 
   return (
-    <div>
-    <form id='login-form' onSubmit={handleSubmit}>
+    <div id='login'>
+    <form  id='login-form' onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
       <div>Enter Your Login Information</div>
-      <label>
+      <label >
         Username or Email: 
         <input
           type="text"
@@ -58,11 +58,15 @@ function LoginForm() {
           required
         />
       </label>
-      <button type="submit">Log In</button>
-      <button type='button' onClick={demoSubmit}>
-      Demo User
-      </button>
     </form>
+    <div id='login-buttons'>
+
+    <button type="submit">Log In</button>
+    <button type='button' onClick={demoSubmit}>
+      Demo User
+    </button>
+
+    </div>
     </div>
   );
 }
