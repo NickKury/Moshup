@@ -2,7 +2,7 @@ import {getGenres} from '../../store/genre';
 import { useEffect, useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import{useHistory, useParams} from 'react-router-dom'
-import {createEvent} from '../../store/event'
+import {createEvent, getEvents} from '../../store/event'
 import './CreateButton.css'
 
 const CreateEvent = () => {
@@ -11,6 +11,8 @@ const CreateEvent = () => {
     const history = useHistory();
     const genres = useSelector(state => Object.values(state.genres)); //obj.values changes from an array to an obj
     const userId = useSelector(state => state.session.user?.id) // ? for if user id
+    const events = useSelector(state => Object.values(state.event))
+    console.log('events from create event 1', events)
     const [description, setDescription] = useState('');
     const [genre, setGenre] = useState('');
     const [date, setDate] = useState('');
@@ -38,9 +40,9 @@ const CreateEvent = () => {
             };
 
             const event = await dispatch(createEvent(payload))
-            // console.log('created event', event, event.event.id)
+            console.log('created event', event)
             if(event){
-                history.push(`/events/${event.event.id}`);
+                history.push(`/events/${event.id}`);
             }
 
         }

@@ -60,7 +60,6 @@ export const createEvent = data => async dispatch =>{
     if(response.ok){
         const event = await response.json();
         dispatch(addOneEvent(event));
-        // console.log('==========',event)
         return event;
     }
 }
@@ -111,24 +110,29 @@ const eventReducer = (state = initialState, action) => {
             return singleState;
             
         case ADD_ONE: {
-            if(!state[action.event.id]){
-                const newState = {
-                    ...state,
-                    [action.event.id]: action.event
-                }
+            // if(!state[action.event.id]){
+                const eventState = {...state}
+                // const newState = {
+                //     ...state,
+                //     [action.event.id]: action.event
+                // }
+                eventState[action.event.id] = action.event
+                return eventState;
+
                 // const eventList = newState.list.map(id=> newState[id]);
                 // eventList.push(action.event);
                 // newState.list = sortList(eventList);
-                return newState
+
+                // return newState
             }
-            return{
-                ...state,
-                [action.event.id]: {
-                    ...state[action.event.id],
-                    ...action.event,
-                }
-            }
-        }
+            // return{
+            //     ...state,
+            //     [action.event.id]: {
+            //         ...state[action.event.id],
+            //         ...action.event,
+            //     }
+            // }
+        // }
         case EDIT_EVENT: 
         // const editEvent = {
         //     ...state,
